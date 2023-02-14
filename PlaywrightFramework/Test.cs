@@ -1,13 +1,10 @@
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Microsoft.Playwright;
-using Microsoft.Playwright.NUnit;
 
 namespace PlaywrightFramework;
 
 [Parallelizable(ParallelScope.Self)]
 [TestFixture]
-public class Test : PageTest
+public class Test : TestBase
 {
     [Test]
     public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()

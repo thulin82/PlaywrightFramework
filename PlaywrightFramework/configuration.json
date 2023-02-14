@@ -1,0 +1,6 @@
+{
+  "browser": {
+    "name": "chromium",
+    "headed" :  "0"
+  }
+}
