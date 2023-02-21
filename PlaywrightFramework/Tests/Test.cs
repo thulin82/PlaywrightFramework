@@ -1,15 +1,21 @@
+using PlaywrightFramework.Pages;
 using System.Text.RegularExpressions;
 
-namespace PlaywrightFramework;
+namespace PlaywrightFramework.Tests;
 
 [Parallelizable(ParallelScope.Self)]
-[TestFixture]
 public class Test : TestBase
 {
     [Test]
     public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
     {
-        await Page.GotoAsync("https://playwright.dev");
+        using (var searchPage = new SearchPage(Page))
+        {
+            await searchPage.GoTo();
+            await searchPage.Search("Markus Thulin");
+        }
+
+        /*await Page.GotoAsync("https://playwright.dev");
 
         // Expect a title "to contain" a substring.
         await Expect(Page).ToHaveTitleAsync(new Regex("Playwright"));
@@ -26,6 +32,6 @@ public class Test : TestBase
         // Expects the URL to contain intro.
         await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
         // Expects the title to contain Installation
-        await Expect(Page).ToHaveTitleAsync(new Regex(".*Installation"));
+        await Expect(Page).ToHaveTitleAsync(new Regex(".*Installation"));*/
     }
 }

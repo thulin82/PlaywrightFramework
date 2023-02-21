@@ -1,7 +1,7 @@
 using Microsoft.Playwright.NUnit;
 using PlaywrightFramework.Core;
 
-namespace PlaywrightFramework;
+namespace PlaywrightFramework.Tests;
 
 public abstract class TestBase : PageTest
 {
