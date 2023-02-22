@@ -1,6 +1,16 @@
 {
+  "browserContextOptions": {
+    "acceptDownloads": true,
+    "baseURL": "https://playwright.dev",
+    "bypassCSP": false,
+    "colorScheme": "light",
+    "isMobile": false,
+    "locale": "en-US",
+    "offline": false,
+    "recordVideoDir": "Videos"
+  },
   "browser": {
     "name": "chromium",
-    "headed" :  "0"
+    "headed": "0"
   }
 }
