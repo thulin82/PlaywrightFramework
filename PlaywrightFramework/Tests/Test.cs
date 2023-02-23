@@ -1,3 +1,4 @@
+using Microsoft.Playwright;
 using PlaywrightFramework.Pages;
 using System.Text.RegularExpressions;
 
@@ -15,5 +16,16 @@ public class Test : TestBase
         await page.ClickGetStarted();
         await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
         await Expect(Page).ToHaveTitleAsync(new Regex(".*Installation"));
+    }
+
+    [Test]
+    public async Task TestingwithPOM()
+    {
+        LoginPage loginPage = new LoginPage(Page);
+        await loginPage.GoTo();
+        await loginPage.ClickLogin();
+        await loginPage.Login("admin", "password");
+        var isExist = await loginPage.IsEmployeeDetailsExists();
+        Assert.IsTrue(isExist);
     }
 }

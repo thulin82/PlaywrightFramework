@@ -1,7 +1,7 @@
 {
   "browserContextOptions": {
     "acceptDownloads": true,
-    "baseURL": "https://playwright.dev",
+    "baseURL": "http://www.eaapp.somee.com",
     "bypassCSP": false,
     "colorScheme": "light",
     "isMobile": false,
