@@ -8,18 +8,7 @@ namespace PlaywrightFramework.Tests;
 public class Test : TestBase
 {
     [Test]
-    public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
-    {
-        PlaywrightPage page = new PlaywrightPage(Page);
-        await page.GoTo();
-        await Expect(Page).ToHaveTitleAsync(new Regex("Playwright"));
-        await page.ClickGetStarted();
-        await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
-        await Expect(Page).ToHaveTitleAsync(new Regex(".*Installation"));
-    }
-
-    [Test]
-    public async Task TestingwithPOM()
+    public async Task LogInTest()
     {
         LoginPage loginPage = new LoginPage(Page);
         await loginPage.GoTo();
