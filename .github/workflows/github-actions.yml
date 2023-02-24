@@ -21,7 +21,7 @@ jobs:
             - name: Build
               run: dotnet build --configuration Release --no-restore
             - name: Install browsers
-              run: pwsh PlaywrightFramework/bin/Debug/netX/playwright.ps1 install
+              run: pwsh PlaywrightFramework/bin/Release/net6.0/playwright.ps1 install
             - name: Test
               run: dotnet test --no-restore --verbosity normal --logger trx
             - name: Test Report
