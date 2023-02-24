@@ -20,6 +20,8 @@ jobs:
               run: dotnet restore
             - name: Build
               run: dotnet build --configuration Release --no-restore
+            - name: Install browsers
+              run: pwsh PlaywrightFramework/bin/Release/net6.0/playwright.ps1 install
             - name: Test
               run: dotnet test --no-restore --verbosity normal --logger trx
             - name: Test Report
@@ -27,6 +29,6 @@ jobs:
               if: success() || failure()
               with:
                 name: Tests
-                path: SeleniumFramework/TestResults/*.trx
+                path: PlaywrightFramework/TestResults/*.trx
                 reporter: dotnet-trx
                 fail-on-error: 'false'
