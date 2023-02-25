@@ -20,11 +20,6 @@ jobs:
               run: dotnet restore
             - name: Build
               run: dotnet build --configuration Release --no-restore
-
-    Test:
-        needs: Build
-        runs-on: windows-latest
-        steps:
             - name: Install browsers
               run: pwsh PlaywrightFramework/bin/Release/net6.0/playwright.ps1 install
             - name: Test
