@@ -2,11 +2,11 @@
 
 namespace PlaywrightFramework.Pages
 {
-    public class LoginPage
+    public class LoginPage : PageBase
     {
         private readonly IPage _page;
 
-        public LoginPage(IPage page)
+        public LoginPage(IPage page) : base(page)
         {
             _page = page;
         }
