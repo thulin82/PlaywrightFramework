@@ -7,7 +7,7 @@ on:
         branches: [main]
 
 jobs:
-    Build:
+    Build_and_Test:
         runs-on: windows-latest
 
         steps:
