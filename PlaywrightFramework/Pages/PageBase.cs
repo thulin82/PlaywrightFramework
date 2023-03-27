@@ -24,13 +24,6 @@ namespace PlaywrightFramework.Pages
             logger = LogManager.GetCurrentClassLogger();
         }
 
-        /*[SetUp]
-        public void SetUp()
-        {
-            logger.Debug($"Test: '{TestContext.CurrentContext.Test.FullName}'");
-        }
-        */
-
         private void Page_Crash(object? sender, IPage e)
         {
             logger.Debug($"Crashed page URL is {e.Url}");
