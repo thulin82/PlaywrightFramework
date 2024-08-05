@@ -1,16 +1,4 @@
 {
-  "browserContextOptions": {
-    "acceptDownloads": true,
-    "baseURL": "http://www.eaapp.somee.com",
-    "bypassCSP": false,
-    "colorScheme": "light",
-    "isMobile": false,
-    "locale": "en-US",
-    "offline": false,
-    "recordVideoDir": "Videos"
-  },
-  "browser": {
-    "name": "chromium",
-    "headed": "0"
-  }
+  "browser": "Chromium",
+  "headless": true
 }
