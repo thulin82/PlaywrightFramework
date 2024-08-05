@@ -15,13 +15,13 @@ public abstract class TestBase : PageTest
     [OneTimeSetUp]
     public void Setup()
     {
-        Environment.SetEnvironmentVariable("Browser", _playwrightConfig.browserOptions.Name);
-        Environment.SetEnvironmentVariable("HEADED", _playwrightConfig.browserOptions.Headed);
+        Environment.SetEnvironmentVariable("Browser", _playwrightConfig.browserOptions?.Name);
+        Environment.SetEnvironmentVariable("HEADED", _playwrightConfig.browserOptions?.Headed);
     }
 
     public override BrowserNewContextOptions ContextOptions()
     {
-        return _playwrightConfig.browserNewContextOptions;
+        return _playwrightConfig.browserNewContextOptions ?? new BrowserNewContextOptions();
     }
 
 }
