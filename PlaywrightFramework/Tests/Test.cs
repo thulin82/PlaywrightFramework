@@ -1,6 +1,4 @@
-using Microsoft.Playwright;
 using PlaywrightFramework.Pages;
-using System.Text.RegularExpressions;
 
 namespace PlaywrightFramework.Tests;
 
@@ -10,11 +8,11 @@ public class Test : TestBase
     [Test]
     public async Task LogInTest()
     {
-        LoginPage loginPage = new LoginPage(Page);
+        LoginPage loginPage = new(Page);
         await loginPage.GoTo();
         await loginPage.ClickLogin();
         await loginPage.Login("admin", "password");
         var isExist = await loginPage.IsEmployeeDetailsExists();
-        Assert.IsTrue(isExist);
+        Assert.That(isExist, Is.True);
     }
 }
