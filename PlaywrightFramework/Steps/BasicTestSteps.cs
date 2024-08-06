@@ -46,6 +46,6 @@ public class BasicTestSteps(LoginPageObject loginPageObject)
     [Then(@"the user remains on the login page")]
     public void ThenTheUserRemainsOnTheLoginPage()
     {
-        _pageObject.Page.Url.Should().EndWith("/Account/Login");
+        _pageObject.Page?.Url.Should().EndWith("/Account/Login");
     }
 }
